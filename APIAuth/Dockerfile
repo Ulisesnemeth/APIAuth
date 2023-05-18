@@ -7,7 +7,7 @@ EXPOSE 443
 
 FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build
 WORKDIR /src
-COPY ["APIAuth/APIAuth.csproj", "APIAuth/"]
+COPY APIAuth/*.csproj, "APIAuth/"
 RUN dotnet restore "APIAuth/APIAuth.csproj"
 COPY . .
 WORKDIR "/src/APIAuth"
